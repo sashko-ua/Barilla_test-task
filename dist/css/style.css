@@ -1,0 +1,115 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins-Regular', sans-serif;
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url(../fonts/Poppins-Bold.woff2);
+}
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url(../fonts/Poppins-Regular.woff2);
+}
+
+@font-face {
+  font-family: 'BalooBhai';
+  src: url(../fonts/BalooBhai-Regular.woff2);
+}
+
+@-webkit-keyframes scale-in-bottom {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-bottom {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+}
+
+.main {
+  background: url(../img/bg-barilla.jpg) top right/cover no-repeat;
+  background-attachment: fixed;
+  padding: 1em;
+}
+
+.main__wrapper {
+  max-width: 920px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: .7em;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.main__headline {
+  background: #F01A18;
+  border-radius: .7em .7em 0 0;
+  padding: .4em 0 .4em;
+}
+
+.main__headline h1 i {
+  font-family: 'BalooBhai', cursive;
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+
+.main__img {
+  padding-top: 2em !important;
+  -webkit-animation: scale-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  width: 83.33333%;
+  margin: 0 auto;
+}
+
+.main__img img {
+  width: 100%;
+}
+
+.main__sub-headline {
+  font-size: 1.5em;
+  color: #363636;
+  text-shadow: 0 0 0.85em #ccc;
+}
