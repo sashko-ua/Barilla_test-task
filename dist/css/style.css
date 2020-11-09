@@ -113,3 +113,37 @@
   color: #363636;
   text-shadow: 0 0 0.85em #ccc;
 }
+
+.main__radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+  width: 100%;
+}
+
+.main__radio input {
+  display: none;
+}
+
+.main__radio-label {
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid #1779ba;
+  border-radius: .4rem;
+  color: #1779ba;
+  width: 100%;
+  margin: 0 0 1rem 0;
+  padding: 0.85em 1em;
+  cursor: pointer;
+  -webkit-transition: background-color 0.25s ease-out,color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out,color 0.25s ease-out;
+  transition: background-color 0.25s ease-out,color 0.25s ease-out;
+}
