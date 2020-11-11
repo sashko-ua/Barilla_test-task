@@ -3,7 +3,7 @@
     background-attachment: fixed
     padding: 1em
     &__wrapper
-        max-width: 920px!important
+        max-width: 875px!important
         display: flex
         justify-content: center
         flex-flow: column wrap
@@ -23,7 +23,8 @@
                 font-family: 'BalooBhai', cursive
                 color: #fff
                 font-size: 1.7rem
-                line-height: 2rem
+                line-height: 0.8em
+
     &__img
         padding-top: 2em!important
         -webkit-animation: scale-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
@@ -36,28 +37,110 @@
         font-size: 1.5em
         color: #363636
         text-shadow: 0 0 0.85em #ccc
-    &__radio
-        display: flex
-        justify-content: center
-        padding-top: .4rem
-        padding-bottom: .4rem
-        width: 100%
-        input
-            display: none
-        &-label
-            font-size: 0.9rem
-            line-height: 1
-            text-align: center
-            text-transform: uppercase
-            font-weight: 700
-            border: 1px solid #1779ba
-            border-radius: .4rem
-            color: #1779ba
+        margin: 0 0 .5rem
+        font-weight: 500
+    .form
+        width: 83.5%
+        margin: 0 auto
+        &__radio
+            display: flex
+            justify-content: center
+            padding-top: .4rem
+            padding-bottom: .4rem
+            margin: 0 auto
             width: 100%
+            input
+                display: none
+            &-gender
+                width: 100%
+                padding-right: .4rem
+                padding-left: .4rem
 
-            margin: 0 0 1rem 0
-            padding: 0.85em 1em
+            &-label
+                display: block
+                font-size: 0.9rem
+                line-height: 1
+                text-align: center
+                text-transform: uppercase
+                font-weight: 700
+                border: 1px solid #1779ba
+                border-radius: .4rem
+                color: #1779ba
+                width: 100%
 
-            cursor: pointer
+                margin: 0 0 1rem 0
+                padding: 0.85em 1em
+                cursor: pointer
 
-            transition: background-color 0.25s ease-out,color 0.25s ease-out
+                // transition: background-color 0.25s ease-out,color 0.25s ease-out
+                &:hover
+                    border-color: #0c3d5d
+                    color: #0c3d5d
+        &__name
+            display: flex
+
+        &__row
+            position: relative
+            display: flex
+            width: 100%
+            padding-right: .4rem
+            padding-left: .4rem
+            input
+                color: #fff
+                border: none
+                border-bottom: 1px solid #677073
+                padding: 1rem 0.5rem 0.5rem
+                background-color: transparent
+                width: 100%
+                line-height: 1.15
+            label
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                left: calc( .4rem + 8px )
+                color: #4e4e4e
+
+            select
+                width: 100%
+                background-color: transparent
+                border: none
+                border-bottom: 1px solid #677073
+                margin: 0 0 20px
+                color: #4e4e4e
+                padding: 10px 10px 0px 0.5rem
+                height: 2.7rem
+                font-size: 1em
+                cursor: pointer
+
+            .month
+                margin: 0 1em 20px
+
+    &__btn
+        text-transform: uppercase
+        font-weight: 700
+        background: #F01A18
+        color: #fff
+        font-size: 1.25rem
+        border: none
+        border-radius: .4rem
+        width: calc( 100% - .4em)
+        margin: 0 0 1rem 0
+        padding: 12px
+        text-align: center
+        cursor: pointer
+        span
+            animation-name: blinker
+            animation-duration: 1.2s
+            animation-timing-function: linear
+            animation-iteration-count: infinite
+
+    .dayOfBirth
+        text-align: left
+        line-height: 1.5em
+        color: #4e4e4e
+        font-size: 0.9rem
+        font-weight: 700
+        padding: 0 0 0 0.4em
+        margin: 15px 0 10px
+    .pt
+        margin: 22px 0 0

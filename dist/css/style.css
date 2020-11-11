@@ -57,6 +57,34 @@
   }
 }
 
+@-webkit-keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .main {
   background: url(../img/bg-barilla.jpg) top right/cover no-repeat;
   background-attachment: fixed;
@@ -64,7 +92,7 @@
 }
 
 .main__wrapper {
-  max-width: 920px !important;
+  max-width: 875px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,7 +121,7 @@
   font-family: 'BalooBhai', cursive;
   color: #fff;
   font-size: 1.7rem;
-  line-height: 2rem;
+  line-height: 0.8em;
 }
 
 .main__img {
@@ -112,9 +140,16 @@
   font-size: 1.5em;
   color: #363636;
   text-shadow: 0 0 0.85em #ccc;
+  margin: 0 0 .5rem;
+  font-weight: 500;
 }
 
-.main__radio {
+.main .form {
+  width: 83.5%;
+  margin: 0 auto;
+}
+
+.main .form__radio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,14 +158,22 @@
           justify-content: center;
   padding-top: .4rem;
   padding-bottom: .4rem;
+  margin: 0 auto;
   width: 100%;
 }
 
-.main__radio input {
+.main .form__radio input {
   display: none;
 }
 
-.main__radio-label {
+.main .form__radio-gender {
+  width: 100%;
+  padding-right: .4rem;
+  padding-left: .4rem;
+}
+
+.main .form__radio-label {
+  display: block;
   font-size: 0.9rem;
   line-height: 1;
   text-align: center;
@@ -143,7 +186,113 @@
   margin: 0 0 1rem 0;
   padding: 0.85em 1em;
   cursor: pointer;
-  -webkit-transition: background-color 0.25s ease-out,color 0.25s ease-out;
-  -o-transition: background-color 0.25s ease-out,color 0.25s ease-out;
-  transition: background-color 0.25s ease-out,color 0.25s ease-out;
+}
+
+.main .form__radio-label:hover {
+  border-color: #0c3d5d;
+  color: #0c3d5d;
+}
+
+.main .form__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .form__row {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding-right: .4rem;
+  padding-left: .4rem;
+}
+
+.main .form__row input {
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #677073;
+  padding: 1rem 0.5rem 0.5rem;
+  background-color: transparent;
+  width: 100%;
+  line-height: 1.15;
+}
+
+.main .form__row label {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: calc( .4rem + 8px);
+  color: #4e4e4e;
+}
+
+.main .form__row select {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #677073;
+  margin: 0 0 20px;
+  color: #4e4e4e;
+  padding: 10px 10px 0px 0.5rem;
+  height: 2.7rem;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.main .form__row .month {
+  margin: 0 1em 20px;
+}
+
+.main__btn {
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #F01A18;
+  color: #fff;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: .4rem;
+  width: calc( 100% - .4em);
+  margin: 0 0 1rem 0;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main__btn span {
+  -webkit-animation-name: blinker;
+          animation-name: blinker;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.main .dayOfBirth {
+  text-align: left;
+  line-height: 1.5em;
+  color: #4e4e4e;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0 0 0 0.4em;
+  margin: 15px 0 10px;
+}
+
+.main .pt {
+  margin: 22px 0 0;
+}
+
+.footer {
+  margin: 16px auto 0;
+  font-size: 0.6em;
+  line-height: 1.6;
+  padding: 6.4px 4em;
+}
+
+.footer p {
+  margin: 0 0 1.5em;
 }
