@@ -6,10 +6,13 @@ const btn = document.querySelector('.main__btn'),
     radioLabel = [...document.querySelectorAll('.form__radio-label')],
     radioErr = document.querySelector('.form__radio-error'),
     firstname = document.querySelector('input[name=firstname]'),
+    firstnameLabel = document.querySelector('.firstname__label'),
     firstnameErr = document.querySelector('.firstname__error'),
     lastname = document.querySelector('input[name=lastname]'),
     lastnameErr = document.querySelector('.lastname__error'),
+    lastnameLabel = document.querySelector('.lastname__label'),
     email = document.querySelector('input[name=email]'),
+    emailLabel = document.querySelector('.email__label'),
     emailErr = document.querySelector('.email__error'),
     regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     dayOfBirth = document.querySelector('select[name=dayofbirth]'),
@@ -18,12 +21,37 @@ const btn = document.querySelector('.main__btn'),
     dateErr = document.querySelector('.date__error'),
     selects = [...document.querySelectorAll('select')];
 
+firstname.addEventListener('blur', () => {
+    if (firstname.value == '') {
+        firstnameLabel.classList.remove('label_active');
+    } else {
+        firstnameLabel.classList.add('label_active');
+    }
+});
+
+lastname.addEventListener('blur', () => {
+    if (lastname.value == '') {
+        lastnameLabel.classList.remove('label_active');
+    } else {
+        lastnameLabel.classList.add('label_active');
+    }
+});
+
+email.addEventListener('blur', () => {
+    if (email.value == '') {
+        emailLabel.classList.remove('label_active');
+    } else {
+        emailLabel.classList.add('label_active');
+    }
+});
+
+
 btn.addEventListener('click', (e) => {
     e.preventDefault();
 
     radioValidate()
     firstnameValidate();
-    lactnameValidate();
+    lastnameValidate();
     emailValidate();
 
     dayValidate();
@@ -39,9 +67,9 @@ function clearErrStyleRadio() {
             radioLabel.forEach(elem => {
                 elem.classList.remove('error-border');
                 radioErr.innerHTML = '';
-            })
+            });
         });
-    })
+    });
 }
 
 function radioValidate() {
@@ -49,7 +77,7 @@ function radioValidate() {
         radioErr.innerHTML = 'completa correttamente il campo: sesso';
         radioLabel.forEach(e => {
             e.classList.add('error-border');
-        })
+        });
     }
 }
 
@@ -65,7 +93,7 @@ firstname.addEventListener('input', () => {
 
 firstname.addEventListener('click', () => {
     firstnameErr.innerHTML = '';
-})
+});
 
 function firstnameValidate() {
     if (firstname.value == '') {
@@ -75,8 +103,8 @@ function firstnameValidate() {
 }
 
 lastname.addEventListener('blur', () => {
-    lactnameValidate();
-})
+    lastnameValidate();
+});
 
 lastname.addEventListener('input', () => {
     lastname.classList.remove('error-border-bottom');
@@ -84,9 +112,9 @@ lastname.addEventListener('input', () => {
 
 lastname.addEventListener('click', () => {
     lastnameErr.innerHTML = '';
-})
+});
 
-function lactnameValidate() {
+function lastnameValidate() {
     if (lastname.value == '') {
         lastnameErr.innerHTML = 'completa correttamente il campo: cognome';
         lastname.classList.add('error-border-bottom');
@@ -95,11 +123,11 @@ function lactnameValidate() {
 
 email.addEventListener('blur', () => {
     emailValidate();
-})
+});
 
 email.addEventListener('click', () => {
     emailErr.innerHTML = '';
-})
+});
 
 email.addEventListener('input', () => {
     email.classList.remove('error-border-bottom');
@@ -112,7 +140,7 @@ function emailValidate() {
         emailErr.innerHTML = 'completa correttamente il campo: email';
         email.classList.add('error-border-bottom');
     }
-};
+}
 
 dayOfBirth.addEventListener('change', () => {
     dayValidate();
@@ -142,7 +170,7 @@ function dayValidate() {
     } else {
         dayOfBirth.classList.remove('dateErr');
     }
-};
+}
 
 function monthValidate() {
     if (monthOfBirth.selectedIndex == 0) {
@@ -150,7 +178,7 @@ function monthValidate() {
     } else {
         monthOfBirth.classList.remove('dateErr');
     }
-};
+}
 
 function yearValidate() {
     if (yearOfBirth.selectedIndex == 0) {

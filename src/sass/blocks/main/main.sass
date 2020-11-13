@@ -72,7 +72,6 @@
                 bottom: unset !important
         &__name
             display: flex
-
         &__row
             position: relative
             display: flex
@@ -88,17 +87,19 @@
                 width: 100%
                 font-size: 100%
                 line-height: 1.15
-                &:focus ~ label
+                &:focus ~ .label
                     top: .5rem
                     font-size: 0.75em
-
-            label
+            .label
                 position: absolute
                 top: 50%
                 transform: translateY(-50%)
                 left: calc( .4rem + 8px )
                 color: #4e4e4e
                 transition: all .2s ease
+                &_active
+                    top: .5rem
+                    font-size: 0.75em
             select
                 width: 100%
                 background-color: transparent
