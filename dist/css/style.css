@@ -6,6 +6,30 @@
   font-family: 'Poppins-Regular', sans-serif;
 }
 
+*:focus {
+  outline: none;
+}
+
+.wrapper {
+  max-width: 875px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: .7em;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.7);
+}
+
 @font-face {
   font-family: 'Poppins-Bold';
   src: url(../fonts/Poppins-Bold.woff2);
@@ -91,37 +115,18 @@
   padding: 1em;
 }
 
-.main__wrapper {
-  max-width: 875px !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  text-align: center;
-  max-width: 100%;
-  margin: 0 auto;
-  border-radius: .7em;
-  border: 2px solid white;
-  background: rgba(255, 255, 255, 0.7);
-}
-
 .main__headline {
   background: #F01A18;
   border-radius: .7em .7em 0 0;
-  padding: .4em 0 .4em;
+  padding: .4em 0 .3em;
 }
 
 .main__headline h1 i {
   font-family: 'BalooBhai', cursive;
   color: #fff;
   font-size: 1.7rem;
-  line-height: 0.8em;
+  line-height: 2rem;
+  font-weight: normal;
 }
 
 .main__img {
@@ -140,7 +145,7 @@
   font-size: 1.5em;
   color: #363636;
   text-shadow: 0 0 0.85em #ccc;
-  margin: 0 0 .5rem;
+  margin: 0 0 2rem;
   font-weight: 500;
 }
 
@@ -150,6 +155,7 @@
 }
 
 .main .form__radio {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,14 +168,21 @@
   width: 100%;
 }
 
-.main .form__radio input {
-  display: none;
-}
-
 .main .form__radio-gender {
   width: 100%;
   padding-right: .4rem;
   padding-left: .4rem;
+}
+
+.main .form__radio-gender input {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.main .form__radio-gender input:checked ~ .form__radio-label {
+  background-color: rgba(23, 121, 186, 0.75);
+  color: #fff;
 }
 
 .main .form__radio-label {
@@ -182,15 +195,22 @@
   border: 1px solid #1779ba;
   border-radius: .4rem;
   color: #1779ba;
-  width: 100%;
   margin: 0 0 1rem 0;
   padding: 0.85em 1em;
   cursor: pointer;
+  -webkit-transition: background-color 0.25s ease-out,color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out,color 0.25s ease-out;
+  transition: background-color 0.25s ease-out,color 0.25s ease-out;
 }
 
 .main .form__radio-label:hover {
   border-color: #0c3d5d;
   color: #0c3d5d;
+}
+
+.main .form__radio-error {
+  top: -15px;
+  bottom: unset !important;
 }
 
 .main .form__name {
@@ -216,7 +236,13 @@
   padding: 1rem 0.5rem 0.5rem;
   background-color: transparent;
   width: 100%;
+  font-size: 100%;
   line-height: 1.15;
+}
+
+.main .form__row input:focus ~ label {
+  top: .5rem;
+  font-size: 0.75em;
 }
 
 .main .form__row label {
@@ -227,6 +253,9 @@
           transform: translateY(-50%);
   left: calc( .4rem + 8px);
   color: #4e4e4e;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .main .form__row select {
@@ -234,7 +263,6 @@
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #677073;
-  margin: 0 0 20px;
   color: #4e4e4e;
   padding: 10px 10px 0px 0.5rem;
   height: 2.7rem;
@@ -243,7 +271,7 @@
 }
 
 .main .form__row .month {
-  margin: 0 1em 20px;
+  margin: 0 1em;
 }
 
 .main__btn {
@@ -255,7 +283,7 @@
   border: none;
   border-radius: .4rem;
   width: calc( 100% - .4em);
-  margin: 0 0 1rem 0;
+  margin: 30px 0 1rem 0;
   padding: 12px;
   text-align: center;
   cursor: pointer;
@@ -272,18 +300,45 @@
           animation-iteration-count: infinite;
 }
 
+.main__btn:hover {
+  background: #012A56;
+  -webkit-transition: all .35s ease-in-out !important;
+  -o-transition: all .35s ease-in-out !important;
+  transition: all .35s ease-in-out !important;
+}
+
 .main .dayOfBirth {
   text-align: left;
   line-height: 1.5em;
   color: #4e4e4e;
   font-size: 0.9rem;
   font-weight: 700;
-  padding: 0 0 0 0.4em;
-  margin: 15px 0 10px;
+  padding: 0 0 0 .5em;
+  margin: 35px 0 10px;
 }
 
-.main .pt {
+.main .mt {
   margin: 22px 0 0;
+}
+
+.main .error {
+  position: absolute;
+  left: .4em;
+  bottom: -20px;
+  line-height: 1em;
+  padding: 0.25em 0.35em;
+  color: #c71414;
+  margin-bottom: 1px;
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+.main .error-border {
+  border: 2px solid #c71414;
+}
+
+.main .error-border-bottom {
+  border-bottom: 2px solid #c71414 !important;
 }
 
 .footer {
@@ -295,4 +350,8 @@
 
 .footer p {
   margin: 0 0 1.5em;
+}
+
+.footer__links a {
+  text-decoration: underline;
 }

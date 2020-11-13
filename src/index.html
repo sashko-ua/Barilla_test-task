@@ -11,7 +11,7 @@
 
 <body>
     <section class="main">
-        <div class="main__wrapper">
+        <div class="wrapper">
             <div class="main__headline">
                 <h1>
                     <i>Vinci una fornitura<br>di pasta Barilla gratis per un anno!</i>
@@ -26,46 +26,44 @@
 
             <form class="form" method="#">
                 <div class="form__radio">
-                    <div class="form__radio-gender">
-                        <input type="radio" name="gender" id="gender_male" value="male">
+                    <span class="form__radio-error error"></span>
 
-                        <label id="label_gender_male" for="gender_male" class="form__radio-label">Uomo</label>
+                    <div class="form__radio-gender">
+                        <input type="radio" name="gender" id="gender_male">
+
+                        <label for="gender_male" class="form__radio-label">Uomo</label>
                     </div>
 
                     <div class="form__radio-gender">
                         <input type="radio" name="gender" id="gender_female" value="female">
-                        <label id="label_gender_female" for="gender_female" class="form__radio-label">Donna</label>
+
+                        <label for="gender_female" class="form__radio-label">Donna</label>
                     </div>
                 </div>
 
                 <div class="form__name">
                     <div class="form__row">
-                        <input type="text" name="firstname" id="firstname" class="validate text" value="">
+                        <input type="text" name="firstname" id="firstname">
                         <label id="label_firstname" for="firstname" class="label">Nome</label>
 
-                        <!-- <span class=" status_firstname status"><span class="status_message">completa
-                                    correttamente il
-                                    campo: nome</span></span> -->
+                        <span class="firstname__error error"></span>
                     </div>
 
                     <div class="form__row">
-                        <input type="text" name="lastname" id="lastname" class="validate text" value="">
+                        <input type="text" name="lastname" id="lastname">
 
                         <label id="label_lastname" for="lastname" class="label">Cognome</label>
 
-                        <!-- <span class="status_lastname status"><span class="status_message">completa correttamente il
-                                    campo: cognome</span></span> -->
+                        <span class="lastname__error error"></span>
                     </div>
                 </div>
 
-                <div class="form__row pt">
-                    <input type="email" name="email" id="email" class="validate text" value="">
+                <div class="form__row mt">
+                    <input type="email" name="email" id="email">
 
                     <label id="label_email" for="email" class="label">Email</label>
 
-                    <!-- <span class="status_email status"><span class="status_message">completa correttamente il
-                                campo:
-                                email</span></span> -->
+                    <span class="email__error error"></span>
                 </div>
 
                 <div class="dayOfBirth">
@@ -73,7 +71,7 @@
                 </div>
 
                 <div class="form__row">
-                    <select name="dayofbirth" id="dayofbirth" class="validate text" data-value="" placeholder="TT">
+                    <select name="dayofbirth">
                         <option value="">Giorno</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
@@ -108,7 +106,7 @@
                         <option value="31">31</option>
                     </select>
 
-                    <select class="month">
+                    <select name="monthofbirth" class="month">
                         <option value="">Mese</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
@@ -124,7 +122,7 @@
                         <option value="12">12</option>
                     </select>
 
-                    <select name="yearofbirth" id="yearofbirth" class="validate text" data-value="">
+                    <select name="yearofbirth">
                         <option selected="true" disabled="disabled" value="">Anno</option>
                         <option value="2010">2010</option>
                         <option value="2009">2009</option>
@@ -218,6 +216,8 @@
                         <option value="1921">1921</option>
                         <option value="1920">1920</option>
                     </select>
+
+                    <span class="date__error error"></span>
                 </div>
 
                 <button class="main__btn">
@@ -226,25 +226,26 @@
             </form>
         </div>
 
-        <footer class="main__wrapper footer">
-            <p>© Giorno Unico - Partecipazione gratuita. CONCORSO A PREMI con periodo di partecipazione dal 15
+        <footer class="wrapper footer">
+            <p>
+                © Giorno Unico - Partecipazione gratuita. CONCORSO A PREMI con periodo di partecipazione dal 15
                 dicembre 2019 al 26 novembre 2020. REALIZZATO IN CONFORMITÀ CON QUANTO PREVISTO DAL DPR 430/2001
                 - L'estrazione è garantita da Naturvel PTE LTD. Solo gli utenti che compilano interamente e
                 correttamente il modulo partecipano all'estrazione. Premio: un buono Idea Shopping del valore di
                 1000 euro iva esclusa - montepremi complessivo del concorso è pari a 1000 Euro iva esclusa. In
                 alternativa al buono “IdeaShopping”, l’utente vincitore può scegliere di ricevere un voucher di
-                una compagnia aerea o ferroviaria selezionata dal Promotore.</p>
-            <div class="footer_links">
-                <a href="/cgi-bin/global.pl?todo=show_page&amp;ident=agb&amp;wingame_pk=62&amp;freetest_pk=221&amp;partner_pk=577"
-                    target="popped_iframe" data-dcc="0"><u>Regolamento</u></a> | <a
-                    href="/cgi-bin/global.pl?todo=show_page&amp;ident=datenschutz&amp;wingame_pk=62&amp;freetest_pk=221&amp;partner_pk=577"
-                    target="popped_iframe" data-dcc="0"><u>Privacy</u></a> | <a
-                    href="/cgi-bin/global.pl?todo=show_page&amp;ident=impressum&amp;wingame_pk=62&amp;freetest_pk=221&amp;partner_pk=577"
-                    target="popped_iframe" data-dcc="0"><u>Contatto</u></a>
+                una compagnia aerea o ferroviaria selezionata dal Promotore.
+            </p>
+
+            <div class="footer__links">
+                <a href="#" target="_blank">Regolamento</a> |
+                <a href="#" target="_blank">Privacy</a> |
+                <a href="#" target="_blank">Contatto</a>
             </div>
         </footer>
-
     </section>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

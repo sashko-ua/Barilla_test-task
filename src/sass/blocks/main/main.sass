@@ -2,28 +2,17 @@
     background: url(../img/bg-barilla.jpg) top right/cover no-repeat
     background-attachment: fixed
     padding: 1em
-    &__wrapper
-        max-width: 875px!important
-        display: flex
-        justify-content: center
-        flex-flow: column wrap
-        text-align: center
-        max-width: 100%
-        margin: 0 auto
-
-        border-radius: .7em
-        border: 2px solid white
-        background: rgba(255, 255, 255, 0.7)
     &__headline
         background: #F01A18
         border-radius: .7em .7em 0 0
-        padding: .4em 0 .4em
+        padding: .4em 0 .3em
         h1
             i
                 font-family: 'BalooBhai', cursive
                 color: #fff
                 font-size: 1.7rem
-                line-height: 0.8em
+                line-height: 2rem
+                font-weight: normal
 
     &__img
         padding-top: 2em!important
@@ -37,25 +26,30 @@
         font-size: 1.5em
         color: #363636
         text-shadow: 0 0 0.85em #ccc
-        margin: 0 0 .5rem
+        margin: 0 0 2rem
         font-weight: 500
     .form
         width: 83.5%
         margin: 0 auto
         &__radio
+            position: relative
             display: flex
             justify-content: center
             padding-top: .4rem
             padding-bottom: .4rem
             margin: 0 auto
             width: 100%
-            input
-                display: none
             &-gender
                 width: 100%
                 padding-right: .4rem
                 padding-left: .4rem
-
+                input
+                    position: absolute
+                    width: 0
+                    height: 0
+                    &:checked ~ .form__radio-label
+                        background-color: rgba(23,121,186,0.75)
+                        color: #fff
             &-label
                 display: block
                 font-size: 0.9rem
@@ -66,16 +60,16 @@
                 border: 1px solid #1779ba
                 border-radius: .4rem
                 color: #1779ba
-                width: 100%
-
                 margin: 0 0 1rem 0
                 padding: 0.85em 1em
                 cursor: pointer
-
-                // transition: background-color 0.25s ease-out,color 0.25s ease-out
+                transition: background-color 0.25s ease-out,color 0.25s ease-out
                 &:hover
                     border-color: #0c3d5d
                     color: #0c3d5d
+            &-error
+                top: -15px
+                bottom: unset !important
         &__name
             display: flex
 
@@ -92,20 +86,24 @@
                 padding: 1rem 0.5rem 0.5rem
                 background-color: transparent
                 width: 100%
+                font-size: 100%
                 line-height: 1.15
+                &:focus ~ label
+                    top: .5rem
+                    font-size: 0.75em
+
             label
                 position: absolute
                 top: 50%
                 transform: translateY(-50%)
                 left: calc( .4rem + 8px )
                 color: #4e4e4e
-
+                transition: all .2s ease
             select
                 width: 100%
                 background-color: transparent
                 border: none
                 border-bottom: 1px solid #677073
-                margin: 0 0 20px
                 color: #4e4e4e
                 padding: 10px 10px 0px 0.5rem
                 height: 2.7rem
@@ -113,7 +111,7 @@
                 cursor: pointer
 
             .month
-                margin: 0 1em 20px
+                margin: 0 1em
 
     &__btn
         text-transform: uppercase
@@ -124,7 +122,7 @@
         border: none
         border-radius: .4rem
         width: calc( 100% - .4em)
-        margin: 0 0 1rem 0
+        margin: 30px 0 1rem 0
         padding: 12px
         text-align: center
         cursor: pointer
@@ -133,6 +131,9 @@
             animation-duration: 1.2s
             animation-timing-function: linear
             animation-iteration-count: infinite
+        &:hover
+            background: #012A56
+            transition: all .35s ease-in-out !important
 
     .dayOfBirth
         text-align: left
@@ -140,7 +141,24 @@
         color: #4e4e4e
         font-size: 0.9rem
         font-weight: 700
-        padding: 0 0 0 0.4em
-        margin: 15px 0 10px
-    .pt
+        padding: 0 0 0 .5em
+        margin: 35px 0 10px
+    .mt
         margin: 22px 0 0
+
+    .error
+        position: absolute
+        left: .4em
+        bottom: -20px
+        line-height: 1em
+        padding: 0.25em 0.35em
+        color: #c71414
+        margin-bottom: 1px
+        font-size: 0.75rem
+        text-align: left
+
+    .error-border
+        border: 2px solid #c71414
+
+    .error-border-bottom
+        border-bottom: 2px solid #c71414 !important
