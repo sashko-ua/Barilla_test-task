@@ -317,6 +317,11 @@
   margin: 35px 0 10px;
 }
 
+.main .dateErr {
+  border-bottom: 2px solid #c71414 !important;
+  background-color: #faebeb !important;
+}
+
 .main .mt {
   margin: 22px 0 0;
 }
