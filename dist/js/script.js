@@ -19,7 +19,38 @@ const btn = document.querySelector('.main__btn'),
     monthOfBirth = document.querySelector('select[name=monthofbirth]'),
     yearOfBirth = document.querySelector('select[name=yearofbirth]'),
     dateErr = document.querySelector('.date__error'),
-    selects = [...document.querySelectorAll('select')];
+    selects = [...document.querySelectorAll('select')],
+    overlay = document.querySelector('.overlay'),
+    closeModal = [...document.querySelectorAll('.modal__close')],
+    linksParent = document.querySelector('.footer__links'),
+    regulationModal = document.querySelector('.modal__regulation'),
+    privacyModal = document.querySelector('.modal__privacy'),
+    contactModal = document.querySelector('.modal__contact');
+
+closeModal.forEach(e => {
+    e.addEventListener('click', () => {
+        regulationModal.classList.remove('modal_active');
+        privacyModal.classList.remove('modal_active');
+        contactModal.classList.remove('modal_active');
+        overlay.classList.remove('overlay_active');
+    });
+});
+
+linksParent.addEventListener('click', (e) => {
+    if (e.target.classList.contains('reg')) {
+        regulationModal.classList.add('modal_active');
+    }
+
+    if (e.target.classList.contains('priv')) {
+        privacyModal.classList.add('modal_active');
+    }
+
+    if (e.target.classList.contains('cont')) {
+        contactModal.classList.add('modal_active');
+    }
+
+    overlay.classList.add('overlay_active');
+});
 
 firstname.addEventListener('blur', () => {
     if (firstname.value == '') {

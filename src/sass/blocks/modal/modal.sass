@@ -1,0 +1,47 @@
+.modal
+    display: none
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: #fff
+    text-align: center
+    border: 2px solid white
+    border-radius: .2em
+    padding: 1.5rem 3rem 1.5rem 2rem
+    width: 45rem
+    height: 40rem
+    overflow-y: scroll
+    z-index: 2
+    &__close
+        position: fixed
+        top: .5rem
+        right: 1rem
+        font-size: 25px
+        &:hover
+            cursor: pointer
+    &_active
+        display: block
+    p
+        margin: 0 0 .5rem
+    &__contact
+        height: auto
+        overflow: unset
+
+.overlay
+    display: none
+    position: fixed
+    width: 100%
+    height: 100vh
+    top: 0
+    left: 0
+    background-color: rgba(0, 0, 0, .5)
+    z-index: 1
+    &_active
+        display: block
+
+.regulation
+    display: none
+
+.privacy
+    display: none

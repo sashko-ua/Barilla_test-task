@@ -10,6 +10,12 @@
   outline: none;
 }
 
+body {
+  position: relative;
+  background: url(../img/bg-barilla.jpg) top right/cover no-repeat;
+  background-attachment: fixed;
+}
+
 .wrapper {
   max-width: 875px !important;
   display: -webkit-box;
@@ -109,8 +115,6 @@
 }
 
 .main {
-  background: url(../img/bg-barilla.jpg) top right/cover no-repeat;
-  background-attachment: fixed;
   padding: 1em;
 }
 
@@ -351,18 +355,96 @@
 }
 
 .footer {
-  margin: 16px auto 0;
+  margin: 1em auto 2em;
   font-size: 0.6em;
   line-height: 1.6;
-  padding: 6.4px 4em;
+  padding: 1em 4em;
 }
 
 .footer p {
   margin: 0 0 1.5em;
 }
 
-.footer__links a {
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-decoration: underline;
+  width: 11rem;
+  margin: 0 auto;
+}
+
+.footer__links div {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: .2em;
+  padding: 1.5rem 3rem 1.5rem 2rem;
+  width: 45rem;
+  height: 40rem;
+  overflow-y: scroll;
+  z-index: 2;
+}
+
+.modal__close {
+  position: fixed;
+  top: .5rem;
+  right: 1rem;
+  font-size: 25px;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+}
+
+.modal_active {
+  display: block;
+}
+
+.modal p {
+  margin: 0 0 .5rem;
+}
+
+.modal__contact {
+  height: auto;
+  overflow: unset;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.overlay_active {
+  display: block;
+}
+
+.regulation {
+  display: none;
+}
+
+.privacy {
+  display: none;
 }
 
 @media (max-width: 675px) {
