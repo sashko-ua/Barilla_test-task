@@ -5,28 +5,32 @@
     left: 50%
     transform: translate(-50%, -50%)
     background-color: #fff
-    text-align: center
     border: 2px solid white
     border-radius: .2em
-    padding: 1.5rem 3rem 1.5rem 2rem
-    width: 45rem
-    height: 40rem
+    padding: 1.5rem 2rem
+    max-width: 90%
+    height: 80%
     overflow-y: scroll
     z-index: 2
-    &__close
-        position: fixed
-        top: .5rem
-        right: 1rem
-        font-size: 25px
-        &:hover
-            cursor: pointer
     &_active
         display: block
     p
         margin: 0 0 .5rem
+    li
+        margin: 0 0 0 1.3rem
     &__contact
         height: auto
         overflow: unset
+
+.close
+    position: fixed
+    top: 1rem
+    right: 2rem
+    font-size: 25px
+    color: #fff
+    &:hover
+        cursor: pointer
+        color: red
 
 .overlay
     display: none

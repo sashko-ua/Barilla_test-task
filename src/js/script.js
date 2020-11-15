@@ -21,19 +21,19 @@ const btn = document.querySelector('.main__btn'),
     dateErr = document.querySelector('.date__error'),
     selects = [...document.querySelectorAll('select')],
     overlay = document.querySelector('.overlay'),
-    closeModal = [...document.querySelectorAll('.modal__close')],
+    closeModal = document.querySelector('.close'),
     linksParent = document.querySelector('.footer__links'),
     regulationModal = document.querySelector('.modal__regulation'),
     privacyModal = document.querySelector('.modal__privacy'),
     contactModal = document.querySelector('.modal__contact');
 
-closeModal.forEach(e => {
-    e.addEventListener('click', () => {
-        regulationModal.classList.remove('modal_active');
-        privacyModal.classList.remove('modal_active');
-        contactModal.classList.remove('modal_active');
-        overlay.classList.remove('overlay_active');
-    });
+
+// ----------MODAL----------
+closeModal.addEventListener('click', () => {
+    regulationModal.classList.remove('modal_active');
+    privacyModal.classList.remove('modal_active');
+    contactModal.classList.remove('modal_active');
+    overlay.classList.remove('overlay_active');
 });
 
 linksParent.addEventListener('click', (e) => {
@@ -48,10 +48,12 @@ linksParent.addEventListener('click', (e) => {
     if (e.target.classList.contains('cont')) {
         contactModal.classList.add('modal_active');
     }
-
+    e.preventDefault();
     overlay.classList.add('overlay_active');
 });
 
+
+// ----------VALIDATOR----------
 firstname.addEventListener('blur', () => {
     if (firstname.value == '') {
         firstnameLabel.classList.remove('label_active');
